@@ -1,0 +1,7 @@
+{
+  "name": "Mobile dashboard",
+  "description": "A customization of smashing dashboard",
+  "repository": "https://github.com/ignazioc/mobile-dashboard",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/198px-Ruby_logo.svg.png",
+  "keywords": ["smashing", "mobile", "dashboard", "ruby"]
+}
