@@ -1,9 +1,20 @@
 SCHEDULER.every '6h', :first_in => 10 do |job|
 
-	ios_latest_rating = Rating.find_by_type(:ios).last
-	android_latest_rating = Rating.find_by_type(:android).last
+	ios = Rating.find_by_type(:ios)
+	unless ios.kind_of?(Array)
+		ios = [ ios ]
+	end
 
-	ios_previouos_rating = Rating.find_by_type(:ios).to_a.reverse.drop_while { | entry |
+	android = Rating.find_by_type(:android)
+	unless android.kind_of?(Array)
+		android = [ android ]
+		
+	end
+
+	ios_latest_rating = ios.last
+	android_latest_rating = android.last
+
+	ios_previouos_rating = ios.reverse.drop_while { | entry |
 		Date.parse(entry.created_at) - Date.today == 0
 	}.first
 
@@ -11,7 +22,7 @@ SCHEDULER.every '6h', :first_in => 10 do |job|
 		ios_previouos_rating = ios_latest_rating
 	end
 
-	android_previouos_rating = Rating.find_by_type(:android).to_a.reverse.drop_while { | entry | 
+	android_previouos_rating = android.reverse.drop_while { | entry | 
 		Date.parse(entry.created_at) - Date.today == 0
 	}.first
 
