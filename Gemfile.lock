@@ -1,17 +1,25 @@
+GIT
+  remote: https://github.com/lukelex/csv_record.git
+  revision: 5f47a8aca89e689f110192fc333df0fca71b1710
+  branch: master
+  specs:
+    csv_record (2.1.2)
+      activesupport
+
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (3.2.22.5)
-      i18n (~> 0.6, >= 0.6.4)
-      multi_json (~> 1.0)
+    activesupport (5.1.4)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
     backports (3.11.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    csv_record (2.1.2)
-      activesupport (~> 3.2.9)
     daemons (1.2.6)
     dashing (1.3.7)
       coffee-script (~> 2.2.0)
@@ -34,10 +42,11 @@ GEM
       domain_name (~> 0.5)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
-    json (2.1.0)
+    json (1.8.6)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    minitest (5.11.1)
     multi_json (1.13.1)
     netrc (0.11.0)
     rack (1.5.5)
@@ -85,7 +94,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  csv_record
+  csv_record!
   dashing
   dotenv
   json
