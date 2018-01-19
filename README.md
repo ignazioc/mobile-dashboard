@@ -42,3 +42,14 @@ To find the exact name of the category you're interested, refer to the AppAnnie 
 4. run `smashing run`
 5. Open your browser to [http://localhost:3030](http://localhost:3030)
 6. Enjoy
+
+
+## Deploy on Heroku
+Click on the button below to deploy thi project on Heroku.
+
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+After the deploy do not forget to set the environment variables.
+
+![](heroku_screenshot.png)
