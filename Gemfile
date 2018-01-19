@@ -6,5 +6,5 @@ gem 'csv_record', :git => 'https://github.com/lukelex/csv_record.git', :branch =
 
 gem 'rest-client'
 gem 'json'
-gem 'dashing'
+gem 'smashing'
 gem 'dotenv'
