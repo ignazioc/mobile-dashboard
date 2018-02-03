@@ -22,8 +22,7 @@ SCHEDULER.every '1h', :first_in => 0 do |job|
   parser = Parser.new
 
   ios_app = ENV['IOS_APP_ID']
-  reviews_response = apiclient.get_ios_reviews(ios_app)
-  reviews =  parser.parse_reviews(reviews_response).first(10)
+  reviews = apiclient.get_ios_reviews(ios_app).first(10).sort_by { | review | review["rating"].to_i }.reverse
 
   rows = reviews.map { | hash | { cols: [ { value: rating_stars(hash["rating"])}, { class: 'left', value: hash["text"]} ]} }
 
