@@ -1,4 +1,4 @@
-SCHEDULER.every '6h', :first_in => 5 do |job|
+SCHEDULER.every '6h', :first_in => 2 do |job|
 	
 	apiclient = ApiClient.new
 	ios_app = ENV['IOS_APP_ID']
@@ -11,13 +11,32 @@ SCHEDULER.every '6h', :first_in => 5 do |job|
 	{
 		label: 'iOS',
 		data: ios_values,
-		backgroundColor: [ 'rgba(255, 100, 132, 1)' ] * labels.length,
-		borderColor: [ 'rgba(255, 100, 132, 1)' ] * labels.length,
-		fill: false,
-		pointBorderColor: "rgb(255, 0, 0, 1)"
+		backgroundColor: [ 'rgba(180,140,59, 0.2)' ] * labels.length,
+		borderColor: [ 'rgba(180,140,59, 1)' ] * labels.length,
+		borderWidth: 1,
+		fill: true,
+		pointRadius: 2,
+		pointBackgroundColor:"rgba(180,140,59, 1)",
+		pointBorderColor: "rgba(180,140,59, 1)"
     },
     ]
-    options = {}
+    options = {
+		scales: {
+			yAxes: [
+				{ 
+					ticks: {
+						fontColor: "#B4B4B4"
+					} 
+				} ],
+			xAxes: [
+				{ 
+					ticks: {
+						fontColor: "#B4B4B4"
+					} 
+				} ],
+
+		}
+	}
     
     puts "[FetchiOSDownloads] Downloads: #{ios_values}"
 	send_event('ios_downloads', { labels: labels, datasets: data, options: options })

@@ -17,23 +17,41 @@ SCHEDULER.every '6h', :first_in => 3 do |job|
 	{
 		label: 'iOS',
 		data: ios_values,
-		backgroundColor: [ 'rgba(255, 100, 132, 1)' ] * labels.length,
-		borderColor: [ 'rgba(255, 100, 132, 1)' ] * labels.length,
-		fill: false,
-		pointBorderColor: "rgb(255, 0, 0, 1)"
+		backgroundColor: [ 'rgba(180,140,59, 0.2)' ] * labels.length,
+		borderColor: [ 'rgba(180,140,59, 1)' ] * labels.length,
+	    borderWidth: 1,
+	    fill: false,
+	    pointRadius: 2,
+		pointBackgroundColor:"rgba(180,140,59, 1)",
+		pointBorderColor: "rgba(180,140,59, 1)"
 	}, {
 		label: 'Android',
 		data: android_values,
-		backgroundColor: [ 'rgba(0, 162, 231,1)' ] * labels.length,
-		borderColor: 'rgba(0, 162, 231,1)',
-		pointBorderColor: 'rgba(255, 255, 255,1)',
-		pointBorderWidth: '1',
-		fill: false
+		backgroundColor: [ 'rgba(90, 158, 86, 0.2)' ] * labels.length,
+		borderColor: [ 'rgba(90, 158, 86,1)' ] * labels.length,
+	    borderWidth: 1,
+	    fill: false,
+	    pointRadius: 2,
+		pointBackgroundColor:"rgba(90, 158, 86,1)",
+		pointBorderColor: "rgba(90, 158, 86,1)"
 	}]
 	
 	options = {
 		scales: {
-			yAxes: [ { ticks: { reverse: true } } ],
+			yAxes: [
+				{ 
+					ticks: {
+						reverse: true,
+						fontColor: "#B4B4B4"
+					} 
+				} ],
+			xAxes: [
+				{ 
+					ticks: {
+						fontColor: "#B4B4B4"
+					} 
+				} ],
+
 		}
 	}
 	puts "[Update Ovberall Ranking Chart] iOS: #{ios_values}, Android: #{android_values} "
