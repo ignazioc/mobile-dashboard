@@ -1,0 +1,22 @@
+<script type='text/javascript'>
+$(function() {
+Dashing.widget_base_dimensions = [370, 340]
+Dashing.numColumns = 5
+});
+</script>
+<% content_for :title do %>Mobile Dashboard<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="mobile_overall_ranks" data-view ="LineChart" data-title="Overall Rank" data-moreinfo=""></div>
+    </li>    
+    <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
+      <div data-id="mobile_commerce_ranks" data-view ="LineChart" data-title="eCommerce Rank" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="ios_downloads" data-view ="LineChart" data-title="iOS Downloads" data-moreinfo=""></div>
+    </li>    
+
+  </ul>
+</div>

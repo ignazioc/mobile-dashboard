@@ -2,10 +2,6 @@ require 'date'
 
 Bundler.require(:default)
 require 'dashing'
-require_relative 'jobs/appannie/api_client'
-require_relative 'jobs/appannie/parser'
-require_relative 'jobs/appannie/model'
-
 
 Dotenv.load
 

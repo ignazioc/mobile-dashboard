@@ -29,5 +29,7 @@ data = [
 ]
 options = { }
 
+puts "[Update Rating Chart] iOS: #{ios_values.count} Android: #{android_values.count}}"
+
 send_event('linechart', { labels: labels, datasets: data, options: options })
 end
