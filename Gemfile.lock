@@ -7,7 +7,7 @@ GIT
       activesupport
 
 PATH
-  remote: ../appannie
+  remote: appannie_gem
   specs:
     appannie (0.1.0)
       csv_record

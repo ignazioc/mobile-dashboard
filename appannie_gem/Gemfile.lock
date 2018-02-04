@@ -1,0 +1,50 @@
+PATH
+  remote: .
+  specs:
+    appannie (0.1.0)
+      csv_record
+      dotenv
+      rest-client
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (3.2.22.5)
+      i18n (~> 0.6, >= 0.6.4)
+      multi_json (~> 1.0)
+    concurrent-ruby (1.0.5)
+    csv_record (2.1.2)
+      activesupport (~> 3.2.9)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.2.1)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    i18n (0.9.3)
+      concurrent-ruby (~> 1.0)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    minitest (5.11.2)
+    multi_json (1.13.1)
+    netrc (0.11.0)
+    rake (10.5.0)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  appannie!
+  bundler (~> 1.16)
+  minitest (~> 5.0)
+  rake (~> 10.0)
+
+BUNDLED WITH
+   1.16.0
