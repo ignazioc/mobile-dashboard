@@ -19,10 +19,17 @@ class Parser
 		rating
 	end
 
-	def parse_ranking(response)
+	def parse_rankings(response)
 		hash = JSON.parse(response)
 		ranks = hash["product_ranks"].first
-		ranks["ranks"].values.first
+		parsed_ranks = ranks["ranks"].map { | key, value|
+			date = Date.parse(key, "%Y%d%m")
+			rank = Rank.new
+			rank.date = date
+			rank.rank = value.to_s
+			rank
+		}.sort_by{ | rank | rank.date }
+		return parsed_ranks
 	end
 
 
@@ -30,5 +37,17 @@ class Parser
 		hash = JSON.parse(response)
 		reviews = hash["reviews"]
 		reviews
+	end
+
+	def parse_downloads(response)
+		hash = JSON.parse(response)
+		sales_list = hash["sales_list"]
+		sales_list.map { | entry |
+			download = Download.new
+			date = Date.parse(entry["date"], "%Y%dm")
+			download.date = date
+			download.count = entry["units"]["product"]["downloads"]
+			download
+		}.sort_by{ | download | download.date }
 	end
 end

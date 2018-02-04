@@ -1,0 +1,20 @@
+<script type='text/javascript'>
+$(function() {
+Dashing.widget_base_dimensions = [370, 340]
+Dashing.numColumns = 5
+});
+</script>
+<% content_for :title do %>Mobile Dashboard<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+      <div data-id="reviews" data-view="Table" data-title="iOS Reviews" data-moreinfo="More information about this table"></div>
+    </li>
+
+
+    <li data-row="1" data-col="3" data-sizex="1" data-sizey="2">
+      <div data-id="top20_1" data-view="Top20" data-title="Top 20" data-moreinfo="More information about this table"></div>
+    </li>
+
+  </ul>
+</div>

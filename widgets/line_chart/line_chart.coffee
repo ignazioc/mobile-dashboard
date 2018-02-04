@@ -39,6 +39,7 @@ class Dashing.LineChart extends Dashing.Widget
         }
       }, @get('options'))
     });
+    ctx.style.backgroundColor = 'rgba(255,0,0,255)';
 
   onData: (data) ->
     # Load new values and update chart

@@ -1,40 +1,45 @@
 <script type='text/javascript'>
 $(function() {
 Dashing.widget_base_dimensions = [370, 340]
-Dashing.numColumns = 5
+Dashing.numColumns = 4
 });
 </script>
+<script type='text/javascript'> $(function() { Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":2,"size_y":1},{"col":3,"row":2,"size_x":2,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1},{"col":3,"row":3,"size_x":2,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1}]') }); </script>
 <% content_for :title do %>Mobile Dashboard<% end %>
 <div class="gridster">
   <ul>
-    
+
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-view="Image" data-image="/logo.png"></div>
-    </li>
-    <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
       <div data-id="ios_rating" data-view="Number" data-title="iOS Rating" style="background-color:#96bf48;"></div>
       <i class="fa fa-star icon-background"></i>
     </li>
-    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+    <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
       <div data-id="ios_ranking" data-view="Number" data-title="eCommerce Rank" style="background-color:#96bf48;"></div>
       <i class="fa fa-line-chart icon-background"></i>
     </li>
 
-    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-view="Image" data-image="/android-logo.png"></div>
+    <li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
+      <div data-id="mobile_overall_ranks" data-view ="LineChart" data-title="Overall Rank" data-moreinfo=""></div>
     </li>
-    <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+
+    <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="ios_downloads" data-view ="LineChart" data-title="Downloads" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="android_rating" data-view="Number" data-title="Android Rating" data-min="0" data-max="100"></div>
       <i class="fa fa-star icon-background"></i>
     </li>
-    <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+    <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
       <div data-id="android_ranking" data-view="Number" data-title="eCommerce Rank""></div>
       <i class="fa fa-line-chart icon-background"></i>
     </li>
-    <li data-row="1" data-col="4" data-sizex="2" data-sizey="3">
-      <div data-id="reviews" data-view="Table" data-title="iOS Reviews" data-moreinfo="More information about this table"></div>
+    <li data-row="2" data-col="3" data-sizex="2" data-sizey="1">
+      <div data-id="mobile_commerce_ranks" data-view ="LineChart" data-title="eCommerce Rank" data-moreinfo=""></div>
     </li>
-    <li data-row="3" data-col="1" data-sizex="3" data-sizey="1">
+
+
+    <li data-row="3" data-col="3" data-sizex="2" data-sizey="1">
       <div data-id="linechart" data-view ="LineChart" data-title="Ratings" data-moreinfo=""></div>
     </li>
   </ul>

@@ -3,19 +3,20 @@
 // ----------------------------------------------------------------------------
 $background-color:  #ffffff;
 
-$title-color:       rgba(255, 255, 255, 0.7);
+$title-color:       rgb(200, 200, 200);
 $moreinfo-color:    rgba(255, 255, 255, 0.7);
 $updateat-color:    rgba(255, 255, 255, 1);
 
 // If you want the title at the top, set the position to 'top'
-$title-position:    top;
+$title-position:    boh;
+.updated-at {
+  display: none;
+}
 
 // ----------------------------------------------------------------------------
 // Widget-line-chart styles
 // ----------------------------------------------------------------------------
 .widget-line-chart {
-
-  background-color: $background-color;
 
   .title {
     @if $title-position == 'top' {
@@ -25,7 +26,11 @@ $title-position:    top;
       position: absolute;
     }
     @else {
-      position: relative;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      font-weight: bold;
     }
 
     z-index: 1;

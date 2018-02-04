@@ -1,18 +1,21 @@
-SCHEDULER.every '6h', :first_in => 10 do |job|
+SCHEDULER.every '1h', :first_in => 5 do |job|
 
-	ios = Rating.find_by_type(:ios)
+	ios = Rating.all.to_a.select { | entry | entry.type == "ios" }
 	unless ios.kind_of?(Array)
 		ios = [ ios ]
 	end
 
-	android = Rating.find_by_type(:android)
+	android = Rating.all.to_a.select { | entry | entry.type == "android" }
 	unless android.kind_of?(Array)
 		android = [ android ]
-		
 	end
 
 	ios_latest_rating = ios.last
 	android_latest_rating = android.last
+
+	puts "[UpdateRating] Latest rating: #{ios_latest_rating} from total of: #{ios.count}"
+	puts "[UpdateRating] Latest rating: #{android_latest_rating} from total of: #{android.count}"
+
 
 	ios_previouos_rating = ios.reverse.drop_while { | entry |
 		Date.parse(entry.created_at) - Date.today == 0
@@ -30,6 +33,6 @@ SCHEDULER.every '6h', :first_in => 10 do |job|
 		android_previouos_rating = android_latest_rating
 	end
 
-	send_event('ios_rating', { current: ios_latest_rating.realAVG.round(2), last: ios_previouos_rating.realAVG.round(2) })
-	send_event('android_rating', { current: android_latest_rating.realAVG.round(2), last: android_previouos_rating.realAVG.round(2) })
+	send_event('ios_rating', { current: ios_latest_rating.realAVG.round(2) })
+	send_event('android_rating', { current: android_latest_rating.realAVG.round(2)})
 end
